@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard - SB Admin</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed sb-sidenav-toggled">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="../landing page/index.html">Cardston</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        John Doe
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">All Employees</h1>
+                        <ol class="breadcrumb mb-4">
+                            <!-- <li class="breadcrumb-item active">Dashboard</li> -->
+                        </ol>
+                       
+                        <!-- <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Area Chart Example
+                                    </div>
+                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Bar Chart Example
+                                    </div>
+                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Employess List
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                        </tr>
+                                    </tfoot>
+                                   <tbody>
+                                    <tr>
+                                        <td>001</td>
+                                        <td>Liam Carter</td>
+                                        </tr>
+                                        <tr>
+                                        <td>002</td>
+                                        <td>Olivia Bennett</td>
+                                        </tr>
+                                        <tr>
+                                        <td>003</td>
+                                        <td>Noah Mitchell</td>
+                                        </tr>
+                                        <tr>
+                                        <td>004</td>
+                                        <td>Emma Collins</td>
+                                        </tr>
+                                        <tr>
+                                        <td>005</td>
+                                        <td>Lucas Parker</td>
+                                        </tr>
+                                        <tr>
+                                        <td>006</td>
+                                        <td>Ava Brooks</td>
+                                        </tr>
+                                        <tr>
+                                        <td>007</td>
+                                        <td>Mason Reed</td>
+                                        </tr>
+                                        <tr>
+                                        <td>008</td>
+                                        <td>Sophia Turner</td>
+                                        </tr>
+                                        <tr>
+                                        <td>009</td>
+                                        <td>Ethan Hayes</td>
+                                        </tr>
+                                        <tr>
+                                        <td>010</td>
+                                        <td>Isabella Foster</td>
+                                        </tr>
+                                        <tr>
+                                        <td>011</td>
+                                        <td>Logan Simmons</td>
+                                        </tr>
+                                        <tr>
+                                        <td>012</td>
+                                        <td>Mia Jenkins</td>
+                                        </tr>
+                                        <tr>
+                                        <td>013</td>
+                                        <td>James Powell</td>
+                                        </tr>
+                                        <tr>
+                                        <td>014</td>
+                                        <td>Charlotte Long</td>
+                                        </tr>
+                                        <tr>
+                                        <td>015</td>
+                                        <td>Benjamin Ross</td>
+                                        </tr>
+                                        <tr>
+                                        <td>016</td>
+                                        <td>Amelia Price</td>
+                                        </tr>
+                                        <tr>
+                                        <td>017</td>
+                                        <td>Elijah Ward</td>
+                                        </tr>
+                                        <tr>
+                                        <td>018</td>
+                                        <td>Harper Cox</td>
+                                        </tr>
+                                        <tr>
+                                        <td>019</td>
+                                        <td>Daniel Howard</td>
+                                        </tr>
+                                        <tr>
+                                        <td>020</td>
+                                        <td>Evelyn Gray</td>
+                                        </tr>
+                                        <tr>
+                                        <td>021</td>
+                                        <td>Matthew Barnes</td>
+                                        </tr>
+                                        <tr>
+                                        <td>022</td>
+                                        <td>Abigail Coleman</td>
+                                        </tr>
+                                        <tr>
+                                        <td>023</td>
+                                        <td>Henry Patterson</td>
+                                        </tr>
+                                        <tr>
+                                        <td>024</td>
+                                        <td>Emily Henderson</td>
+                                        </tr>
+                                        <tr>
+                                        <td>025</td>
+                                        <td>Alexander Fisher</td>
+                                        </tr>
+                                        <tr>
+                                        <td>026</td>
+                                        <td>Elizabeth Simmons</td>
+                                        </tr>
+                                        <tr>
+                                        <td>027</td>
+                                        <td>Jackson Graham</td>
+                                        </tr>
+                                        <tr>
+                                        <td>028</td>
+                                        <td>Sofia Wallace</td>
+                                        </tr>
+                                        <tr>
+                                        <td>029</td>
+                                        <td>Sebastian West</td>
+                                        </tr>
+                                        <tr>
+                                        <td>030</td>
+                                        <td>Avery Chapman</td>
+                                        </tr>
+                                        <tr>
+                                        <td>031</td>
+                                        <td>Jack Reynolds</td>
+                                        </tr>
+                                        <tr>
+                                        <td>032</td>
+                                        <td>Ella Dunn</td>
+                                        </tr>
+                                        <tr>
+                                        <td>033</td>
+                                        <td>Owen Black</td>
+                                        </tr>
+                                        <tr>
+                                        <td>034</td>
+                                        <td>Scarlett Porter</td>
+                                        </tr>
+                                        <tr>
+                                        <td>035</td>
+                                        <td>Samuel Grant</td>
+                                        </tr>
+                                        <tr>
+                                        <td>036</td>
+                                        <td>Grace Hunter</td>
+                                        </tr>
+                                        <tr>
+                                        <td>037</td>
+                                        <td>David Mills</td>
+                                        </tr>
+                                        <tr>
+                                        <td>038</td>
+                                        <td>Chloe Kelley</td>
+                                        </tr>
+                                        <tr>
+                                        <td>039</td>
+                                        <td>Joseph Knight</td>
+                                        </tr>
+                                        <tr>
+                                        <td>040</td>
+                                        <td>Victoria Walters</td>
+                                        </tr>
+                                        <tr>
+                                        <td>041</td>
+                                        <td>Carter Greene</td>
+                                        </tr>
+                                        <tr>
+                                        <td>042</td>
+                                        <td>Riley Armstrong</td>
+                                        </tr>
+                                        <tr>
+                                        <td>043</td>
+                                        <td>Wyatt Stephens</td>
+                                        </tr>
+                                        <tr>
+                                        <td>044</td>
+                                        <td>Zoey Weaver</td>
+                                        </tr>
+                                        <tr>
+                                        <td>045</td>
+                                        <td>John Sullivan</td>
+                                        </tr>
+                                        <tr>
+                                        <td>046</td>
+                                        <td>Lily Freeman</td>
+                                        </tr>
+                                        <tr>
+                                        <td>047</td>
+                                        <td>Luke Chapman</td>
+                                        </tr>
+                                        <tr>
+                                        <td>048</td>
+                                        <td>Hannah Pearson</td>
+                                        </tr>
+                                        <tr>
+                                        <td>049</td>
+                                        <td>Gabriel Wagner</td>
+                                        </tr>
+                                        <tr>
+                                        <td>050</td>
+                                        <td>Nora Cole</td>
+                                        </tr>
+                                        <tr>
+                                        <td>051</td>
+                                        <td>Julian Bryant</td>
+                                        </tr>
+                                        <tr>
+                                        <td>052</td>
+                                        <td>Stella Lane</td>
+                                        </tr>
+                                        <tr>
+                                        <td>053</td>
+                                        <td>Isaac Kelley</td>
+                                        </tr>
+                                        <tr>
+                                        <td>054</td>
+                                        <td>Paisley Harper</td>
+                                        </tr>
+                                        <tr>
+                                        <td>055</td>
+                                        <td>Anthony Richards</td>
+                                        </tr>
+                                        <tr>
+                                        <td>056</td>
+                                        <td>Lucy Shaw</td>
+                                        </tr>
+                                        <tr>
+                                        <td>057</td>
+                                        <td>Dylan Crawford</td>
+                                        </tr>
+                                        <tr>
+                                        <td>058</td>
+                                        <td>Ellie West</td>
+                                        </tr>
+                                        <tr>
+                                        <td>059</td>
+                                        <td>Leo Montgomery</td>
+                                        </tr>
+                                        <tr>
+                                        <td>060</td>
+                                        <td>Aria Bishop</td>
+                                        </tr>
+                                        <tr>
+                                        <td>061</td>
+                                        <td>Christopher Dean</td>
+                                        </tr>
+                                        <tr>
+                                        <td>062</td>
+                                        <td>Mila Barrett</td>
+                                        </tr>
+                                        <tr>
+                                        <td>063</td>
+                                        <td>Nathan Fletcher</td>
+                                        </tr>
+                                        <tr>
+                                        <td>064</td>
+                                        <td>Aurora Holland</td>
+                                        </tr>
+                                        <tr>
+                                        <td>065</td>
+                                        <td>Aaron Hudson</td>
+                                        </tr>
+                                        <tr>
+                                        <td>066</td>
+                                        <td>Penelope Russell</td>
+                                        </tr>
+                                        <tr>
+                                        <td>067</td>
+                                        <td>Thomas Spencer</td>
+                                        </tr>
+                                        <tr>
+                                        <td>068</td>
+                                        <td>Naomi Francis</td>
+                                        </tr>
+                                        <tr>
+                                        <td>069</td>
+                                        <td>Charles Ford</td>
+                                        </tr>
+                                        <tr>
+                                        <td>070</td>
+                                        <td>Leah Griffin</td>
+                                        </tr>
+                                        <tr>
+                                        <td>071</td>
+                                        <td>Andrew Larson</td>
+                                        </tr>
+                                        <tr>
+                                        <td>072</td>
+                                        <td>Lillian Hudson</td>
+                                        </tr>
+                                        <tr>
+                                        <td>073</td>
+                                        <td>Joshua Ortega</td>
+                                        </tr>
+                                        <tr>
+                                        <td>074</td>
+                                        <td>Addison McCoy</td>
+                                        </tr>
+                                        <tr>
+                                        <td>075</td>
+                                        <td>Ryan Blake</td>
+                                        </tr>
+                                        <tr>
+                                        <td>076</td>
+                                        <td>Willow Chandler</td>
+                                        </tr>
+                                        <tr>
+                                        <td>077</td>
+                                        <td>Adam Schultz</td>
+                                        </tr>
+                                        <tr>
+                                        <td>078</td>
+                                        <td>Brooklyn Holt</td>
+                                        </tr>
+                                        <tr>
+                                        <td>079</td>
+                                        <td>Kevin Norris</td>
+                                        </tr>
+                                        <tr>
+                                        <td>080</td>
+                                        <td>Claire Watts</td>
+                                        </tr>
+                                        <tr>
+                                        <td>081</td>
+                                        <td>Brian Dean</td>
+                                        </tr>
+                                        <tr>
+                                        <td>082</td>
+                                        <td>Skylar Pratt</td>
+                                        </tr>
+                                        <tr>
+                                        <td>083</td>
+                                        <td>Justin Beck</td>
+                                        </tr>
+                                        <tr>
+                                        <td>084</td>
+                                        <td>Peyton Brady</td>
+                                        </tr>
+                                        <tr>
+                                        <td>085</td>
+                                        <td>Jordan Malone</td>
+                                        </tr>
+                                        <tr>
+                                        <td>086</td>
+                                        <td>Autumn Craig</td>
+                                        </tr>
+                                        <tr>
+                                        <td>087</td>
+                                        <td>Eric Vaughn</td>
+                                        </tr>
+                                        <tr>
+                                        <td>088</td>
+                                        <td>Sadie Lowe</td>
+                                        </tr>
+                                        <tr>
+                                        <td>089</td>
+                                        <td>Patrick Powers</td>
+                                        </tr>
+                                        <tr>
+                                        <td>090</td>
+                                        <td>Kennedy Parks</td>
+                                        </tr>
+                                        <tr>
+                                        <td>091</td>
+                                        <td>Zachary Walsh</td>
+                                        </tr>
+                                        <tr>
+                                        <td>092</td>
+                                        <td>Bella Curtis</td>
+                                        </tr>
+                                        <tr>
+                                        <td>093</td>
+                                        <td>Tyler Ray</td>
+                                        </tr>
+                                        <tr>
+                                        <td>094</td>
+                                        <td>Madelyn Cross</td>
+                                        </tr>
+                                        <tr>
+                                        <td>095</td>
+                                        <td>Brandon Burgess</td>
+                                        </tr>
+                                        <tr>
+                                        <td>096</td>
+                                        <td>Serenity Paul</td>
+                                        </tr>
+                                        <tr>
+                                        <td>097</td>
+                                        <td>Kyle Osborne</td>
+                                        </tr>
+                                        <tr>
+                                        <td>098</td>
+                                        <td>Delilah Bates</td>
+                                        </tr>
+                                        <tr>
+                                        <td>099</td>
+                                        <td>Nathaniel Pope</td>
+                                        </tr>
+                                        <tr>
+                                        <td>100</td>
+                                        <td>Daisy McDaniel</td>
+                                        </tr>
+                                    <tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Cardston@2026</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>
+
