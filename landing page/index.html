@@ -39,7 +39,7 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" action = "../sb-admin/empdash.html">
                                 <!-- Email address input-->
                                 <div class="row">
                                     <div class="col autocomplete">
@@ -54,7 +54,9 @@
                                         </form> -->
 
                                     </div>
-                                    <div class="col-auto"><a href ="../sb-admin/empdash.html" class="btn btn-success btn-lg" id="" type="submit">Go</a></div>
+                                    <div class="col-auto">
+                                        <button type = "submit" class="btn btn-success btn-lg">Login</button>
+                                    </div>
                                     <div class="col-auto">
                                         <a class="btn btn-primary btn-lg" id="" type="submit" href = "../sb-admin/all-emp.html">Show All Employees</a>
                                     </div>
@@ -475,7 +477,8 @@
             addActive(x);
           } else if (e.keyCode == 13) {
             /*If the ENTER key is pressed, prevent the form from being submitted,*/
-            e.preventDefault();
+            $('.form-subscribe').submit();
+            // e.preventDefault();
             if (currentFocus > -1) {
               /*and simulate a click on the "active" item:*/
               if (x) x[currentFocus].click();
