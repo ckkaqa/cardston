@@ -99,6 +99,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
+                            <a class="nav-link" href="longford_calc.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Longford case calc
+                            </a>
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -185,33 +190,49 @@
                         </div>
 
                         
-
                         <div class="row">
                             <div class = "col-md-6">
-                                
-                                  <label for="jobid" class="form-label">Job ID:</label>
-                                  <input type="text" class="form-control" id="jobid" placeholder="Enter Job ID">
-
-                            </div>
-
-
-                            
-                            
-                        </div>
-
-                        <div class="row">
-                            <div class = "col-md-6">
-                                
-                                  <label for="jobname" class="form-label">Job Name:</label>
-                                  <input type="text" class="form-control" id="jobname" placeholder="Enter jobname here">
-
+                                <a class = "btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal">Create new job</a>
                             </div>
                         </div>
-                        
-                        <div class="row">
-                            <div class = "col-md-6">
-                                <a class = "btn btn-success">Create new job</a>
+
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Where are you working?</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                   
+
+                                <div class="row">
+                                    <div class = "col-md-12">
+                                        
+                                          <label for="jobid" class="form-label">Job ID:</label>
+                                          <input type="text" class="form-control" id="jobid" placeholder="Enter Job ID">
+
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="row">
+                                    <div class = "col-md-12">
+                                        
+                                          <label for="jobname" class="form-label">Job Name:</label>
+                                          <input type="text" class="form-control" id="jobname" placeholder="Enter jobname here">
+
+                                    </div>
+                                </div>
+
+                              </div>
+                              <div class="modal-footer">
+                                <a type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</a>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              </div>
                             </div>
+                          </div>
                         </div>
 
                         <!-- <div class="row">
